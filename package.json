@@ -1,6 +1,6 @@
 {
   "name": "uptime-bot",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "UptimeBot",
   "main": "bot.js",
   "scripts": {
@@ -10,6 +10,7 @@
     "@discordjs/rest": "^1.7.1",
     "croxydb": "^0.0.22",
     "discord.js": "^14.14.1",
+    "dotenv": "^16.3.1",
     "moment": "^2.29.4",
     "moment-duration-format": "^2.3.2",
     "ms": "^2.1.3",

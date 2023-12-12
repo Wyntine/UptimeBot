@@ -1,0 +1,13 @@
+{
+  "prefix": "",
+  "botId": "",
+  "botName": "",
+  "ownerIds": [],
+  "token": "",
+  "normalLimit": 3,
+  "premiumLimit": 10,
+  "uptimeLogChannel": "",
+  "premiumLogChannel": "",
+  "blacklistLogChannel": "",
+  "noWarn": false
+}

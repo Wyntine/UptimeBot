@@ -2,7 +2,7 @@
 
 const { Collection } = require("discord.js");
 const pcooldown = new Collection();
-const { prefix } = require("../ayarlar.json");
+const { prefix } = require("../functions/config").getConfig();
 const db = require("croxydb");
 const {
   Bakımda,

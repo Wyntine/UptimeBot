@@ -3,7 +3,7 @@
 const fetch = require("node-fetch");
 const { Event } = require("../functions/event");
 const { getAllLinks, removeEmptyData } = require("../functions/general");
-const { botName } = require("../ayarlar.json");
+const { botName } = require("../functions/config").getConfig();
 
 module.exports = new Event({
   name: "ready",

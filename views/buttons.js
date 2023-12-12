@@ -2,7 +2,7 @@
 
 const { ButtonBuilder, ButtonStyle } = require("discord.js");
 const { Link, Davet, Çöp } = require("./emojis");
-const { botid } = require("../ayarlar.json");
+const { botId } = require("../functions/config").getConfig();
 
 const EkleButon = new ButtonBuilder()
   .setEmoji(Davet)
@@ -24,12 +24,12 @@ const DestekButon = new ButtonBuilder()
   .setLabel("Destek sunucusu")
   .setStyle(ButtonStyle.Link);
 const OyButon = new ButtonBuilder()
-  .setURL(`https://top.gg/bot/${botid}/vote`)
+  .setURL(`https://top.gg/bot/${botId}/vote`)
   .setLabel(`Oy ver`)
   .setStyle(ButtonStyle.Link);
 const DavetButon = new ButtonBuilder()
   .setURL(
-    `https://discord.com/api/oauth2/authorize?client_id=${botid}&permissions=8&scope=bot%20applications.commands`
+    `https://discord.com/api/oauth2/authorize?client_id=${botId}&permissions=8&scope=bot%20applications.commands`
   )
   .setLabel(`Sunucuna ekle`)
   .setStyle(ButtonStyle.Link);

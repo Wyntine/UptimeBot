@@ -21,7 +21,8 @@ const {
   LinkListe,
 } = require("../views/embeds");
 const { LinkEklemeFormu, LinkSilmeFormu } = require("../views/forms");
-const { premiumLimit, normalLimit } = require("../ayarlar.json");
+const { premiumLimit, normalLimit } =
+  require("../functions/config").getConfig();
 const { Destek } = require("../views/rows");
 const { Tik, Çarpı, Link } = require("../views/emojis");
 const { sendLog, checkAdmin } = require("../functions/general");

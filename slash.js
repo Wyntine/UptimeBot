@@ -14,7 +14,7 @@ const eventsPath = path.join(__dirname, "./events");
 const eventFiles = fs
   .readdirSync(eventsPath)
   .filter((file) => file.endsWith(".js"));
-const { botid, token } = require("./ayarlar.json");
+const { botId, token } = require("./functions/config").getConfig();
 
 /**
  * @param {Client} client
@@ -55,6 +55,6 @@ const rest = new REST({ version: "10" }).setToken(token);
 
 setTimeout(() => {
   rest
-    .put(Routes.applicationCommands(botid), { body: commands })
+    .put(Routes.applicationCommands(botId), { body: commands })
     .catch(console.error);
 }, 500);

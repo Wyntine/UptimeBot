@@ -5,9 +5,9 @@ const {
   ButtonBuilder,
   TextInputBuilder,
 } = require("discord.js");
-const settings = require("../ayarlar.json");
+const settings = require("./config").getConfig();
 const { client } = require("../client");
-const { ownerid } = settings;
+const { ownerIds } = settings;
 const db = require("croxydb");
 
 /**
@@ -32,11 +32,11 @@ function inputRow(components) {
  * @param {string} id
  */
 function checkAdmin(id) {
-  return ownerid.includes(id);
+  return ownerIds.includes(id);
 }
 
 /**
- * @param {Exclude<keyof import("../ayarlar.json"), "prefix" | "botid" | "ownerid" | "token" | "normalLimit" | "premiumLimit">} logType
+ * @param {"uptimeLogChannel" | "premiumLogChannel" | "guildLogChannel" | "blacklistLogChannel"} logType
  * @param {import("discord.js").MessageCreateOptions} message
  */
 async function sendLog(logType, message) {

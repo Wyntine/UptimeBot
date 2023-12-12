@@ -41,12 +41,8 @@ const {
   Destek,
   Oy,
 } = require("./emojis");
-const {
-  ownerid,
-  premiumLimit,
-  normalLimit,
-  botName,
-} = require("../ayarlar.json");
+const { ownerIds, premiumLimit, normalLimit, botName } =
+  require("../functions/config").getConfig();
 const { dependencies } = require("../package.json");
 const moment = require("moment");
 const { getAllLinks } = require("../functions/general");
@@ -160,9 +156,6 @@ const Yardım = () => {
 
   return new EmbedBuilder()
     .setColor(Colors.Blurple)
-    .setImage(
-      "https://cdn.glitch.global/a05428fd-4cef-4667-a4b6-a17f503dbea5/standard%20(3).gif?v=1676280335812"
-    )
     .setTitle(`${botName} • Yardım menüsü`)
     .setDescription(
       [
@@ -491,7 +484,7 @@ const İstatistik = (/** @type {ChatInputCommandInteraction} */ interaction) => 
   let minutes = Math.floor(client.uptime / 60000) % 60;
   let seconds = Math.floor(client.uptime / 1000) % 60;
 
-  const owners = ownerid
+  const owners = ownerIds
     // 3.12.2023 tarihinde çalışmıyordu -> [**<@${user}>**](https://discord.com/users/${user})
     .map((user) => {
       const userData = client.users.cache.get(user);

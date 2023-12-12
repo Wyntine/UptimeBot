@@ -1,6 +1,10 @@
 // @ts-check
 
-const { token } = require("./ayarlar.json");
+require("dotenv").config();
+
+const { getConfig, checkConfig } = require("./functions/config");
+checkConfig();
+const { token } = getConfig();
 const { client } = require("./client");
 
 require("moment-duration-format");
